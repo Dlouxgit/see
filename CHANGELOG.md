@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Dlouxgit/see/compare/v1.0.1...v1.1.0) (2023-06-27)
+
+
+### Features
+
+* remove rust dev ([36d89b7](https://github.com/Dlouxgit/see/commit/36d89b754fa70037c54d5d2226225e5164e18b27))
+
 ## [1.0.1](https://github.com/Dlouxgit/see/compare/v1.0.0...v1.0.1) (2023-06-27)
 
 
