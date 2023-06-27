@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Dlouxgit/see/compare/v1.1.0...v1.2.0) (2023-06-27)
+
+
+### Features
+
+* rm extra npm file ([4c97b82](https://github.com/Dlouxgit/see/commit/4c97b82ec29a4feeb1f70c21fcbfdee3018ea05f))
+
 # [1.1.0](https://github.com/Dlouxgit/see/compare/v1.0.1...v1.1.0) (2023-06-27)
 
 
