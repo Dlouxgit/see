@@ -29,8 +29,8 @@ jobs:
           node-version: 18.16
           cache: pnpm
 
-      - name: Setup Rust build
-        run: npm run r-install
+      # - name: Setup Rust build
+      #   run: npm run r-install
 
       - name: Release
         env:
