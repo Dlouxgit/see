@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Dlouxgit/see/compare/v1.2.1...v1.2.2) (2023-06-27)
+
+
+### Bug Fixes
+
+* temporarily add index.node management ([7225022](https://github.com/Dlouxgit/see/commit/7225022a50fdab83fd34cd9a9e08c01eddfe55b3))
+
 ## [1.2.1](https://github.com/Dlouxgit/see/compare/v1.2.0...v1.2.1) (2023-06-27)
 
 
