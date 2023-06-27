@@ -13,7 +13,14 @@
   "bin": {
     "see": "bin/main.js"
   },
-  "keywords": ["degit", "rust", "gitlab", "github", "minisee", "see"],
+  "keywords": [
+    "degit",
+    "rust",
+    "gitlab",
+    "github",
+    "minisee",
+    "see"
+  ],
   "author": "dloux",
   "license": "ISC",
   "devDependencies": {
