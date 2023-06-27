@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
-const rust_test = require('../index.node')
+const seeker = require('../index.node')
 
-try {
-    rust_test.parser()
-} catch (e) {
-    console.log(e)
+const see = async () => {
+    try {
+        await seeker.parser()
+    } catch (e) {
+        console.log(e)
+    }
 }
+
+see()
