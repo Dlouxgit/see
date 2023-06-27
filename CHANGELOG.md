@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Dlouxgit/see/compare/v1.2.0...v1.2.1) (2023-06-27)
+
+
+### Bug Fixes
+
+* to macos ([7782f12](https://github.com/Dlouxgit/see/commit/7782f1202bcdf8f06fa6b9b40b63f234cf00a97f))
+
 # [1.2.0](https://github.com/Dlouxgit/see/compare/v1.1.0...v1.2.0) (2023-06-27)
 
 
