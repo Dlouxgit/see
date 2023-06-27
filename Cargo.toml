@@ -1,0 +1,28 @@
+[package]
+name = "see-seeker"
+version = "0.1.0"
+license = "ISC"
+edition = "2021"
+keywords = ["degit", "rust", "gitlab", "github", "see"]
+description = "Quickly generate templates based on github repo or gitlab repo."
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+inquire = "0.6.2"
+regex = "1.1.7"
+reqwest = "0.9.18"
+tar = "0.4.26"
+flate2 = "1.0.9"
+indicatif = "0.11.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-6"]

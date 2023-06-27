@@ -1,0 +1,25 @@
+{
+  "name": "see-seeker",
+  "version": "0.1.0",
+  "description": "Quickly generate templates based on github repo or gitlab repo.",
+  "main": "index.node",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test"
+  },
+  "bin": {
+    "see": "bin/main.js"
+  },
+  "keywords": ["degit", "rust", "gitlab", "github", "minisee", "see"],
+  "author": "dloux",
+  "license": "ISC",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^21.0.3"
+  }
+}
