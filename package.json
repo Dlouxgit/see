@@ -1,6 +1,6 @@
 {
   "name": "see-seeker",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "description": "Quickly generate templates based on github repo or gitlab repo.",
   "main": "index.node",
   "scripts": {
@@ -20,6 +20,12 @@
     "github",
     "minisee",
     "see"
+  ],
+  "files": [
+    "bin",
+    "index.node",
+    "dist/bin/rollup",
+    "dist/es/package.json"
   ],
   "author": "dloux",
   "license": "ISC",
