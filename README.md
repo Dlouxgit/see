@@ -8,8 +8,6 @@ This project was bootstrapped by [create-neon](https://www.npmjs.com/package/cre
 
 ## Installing see-seeker
 
-You can install the project with npm, run:
-
 ```sh
 $ npm install see-seeker -g
 ```
@@ -27,11 +25,11 @@ $ see https://github.com/Dlouxgit/see ./see
 
 In the project directory, you can run:
 
-### `see [select] [dest]`
+### `see [select [dest]]`
 
 Pull items from the local list to the dest directory, dest defaults to the current directory.
 
-### `see set-token`
+### `see set-token <access_token>`
 
 Set gitlab's private token for internal projects.
 
