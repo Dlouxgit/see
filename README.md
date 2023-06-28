@@ -50,7 +50,7 @@ see/
 ├── src/
 |   └── lib.rs
 ├── bin/
-|   └── main.rs
+|   └── main.js
 └── target/
 ```
 
