@@ -196,6 +196,28 @@ pub fn parser(mut cx: FunctionContext) -> JsResult<JsString> {
                     }
                 }
             },
+            "add" => {
+                let url_info = ParseConfig::parse_site(&config.query).unwrap_or_else(|err| {
+                    println!("Problem parsing arguments: {err}");
+                    process::exit(1)
+                });
+                let new_item: ListItem = ListItem { name: url_info.name, value: url_info.url };
+
+                if data.list.is_none() {
+                    data.list = Some(vec![]);
+                }
+                data.list.as_mut().unwrap().push(new_item);
+                match write_to_see("list", data.list) {
+                    Ok(()) => {
+                        // 操作成功
+                        println!("Write to .see succeeded.");
+                    }
+                    Err(error) => {
+                        // 操作失败，处理错误情况
+                        eprintln!("Write to .see failed: {}.", error);
+                    }
+                }
+            },
             "set-token" => {
                 match write_to_see("cookie", config.query) {
                     Ok(()) => {
@@ -282,7 +304,7 @@ impl ParseConfig {
                 }
             }
             2 => {
-                if !["select", "pull", "set-token"].contains(&args[0].as_str()) {
+                if !["select", "pull", "set-token", "add"].contains(&args[0].as_str()) {
                     _cmd = String::from("pull");
                     query = args[0].clone();
                     dest = PathBuf::from(args[1].clone());
@@ -360,6 +382,7 @@ impl ParseConfig {
         cmds.insert(String::from("select"), true);
         cmds.insert(String::from("set-token"), true);
         cmds.insert(String::from("pull"), true);
+        cmds.insert(String::from("add"), true);
 
         cmds.get(cmd).copied().unwrap_or(false)
     }

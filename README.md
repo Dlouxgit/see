@@ -102,3 +102,53 @@ ISC
 
 [npm-image]: https://img.shields.io/npm/v/see-seeker.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/see-seeker
+
+        let re = Regex::new("^(?:(?:https://)?([^:/]+.[^:/]+)/|git@([^:/]+)[:/]|([^/]+):)?(?P<user>[^/s]+)/(?P<name>.+)(?P<subdir>:(?P<refer>(?:/[^/s#]+)+))?(?:/)?(?:#(.+))?")
+        .unwrap();
+        if re.is_match(src) {
+
+            let caps: regex::Captures<'_> = re.captures(src).unwrap();
+            let matched_site = caps.get(1).or(caps.get(2)).or(caps.get(3));
+            let site: String;
+            if let true = matched_site.is_some() {
+                let reg = Regex::new(".(com|org)$").unwrap();
+                site = reg.replace_all(matched_site.unwrap().as_str(), "").to_string();
+            } else {
+                site = String::from("github");
+            }
+
+            let mut res = false;
+            let mut mode = String::from("git");
+            for (_, v) in VALID_SITES.iter().enumerate() {
+                if site.contains(v) {
+                    res = true;
+                    mode = String::from("tar");
+                }
+            }
+            if !res && !site.starts_with("gitlab") {
+                return Err("cli supports GitHub, GitLab");
+            }
+
+            let domain = site.clone() + ".com";
+            
+            let user = caps.name("user").unwrap().as_str().to_string();
+            let name = caps.name("name").unwrap().as_str().replace(".git", "").to_string();
+            let subdir;
+            subdir = match caps.name("subdir") {
+                None => "xxx",
+                Some(i) => i.as_str(),
+            }.to_string();
+            let refer;
+            refer = match caps.name("refer") {
+                None => "HEAD",
+                Some(i) => i.as_str(),
+            }.to_string();
+            let url = format!("https://{domain}/{user}/{name}");
+            println!("urlrs{:?}", url);
+            let ssh = format!("git@{domain}:{user}/{name}");
+            println!("ssh{:?}", ssh);
+
+            Ok(UrlInfo {site, _user: user, name, _refer: refer, url, _ssh: ssh, _subdir: subdir, _mode: mode})
+        } else {
+            return Err("Not enough arguments.");
+        }
