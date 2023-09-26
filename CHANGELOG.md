@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Dlouxgit/see/compare/v1.2.2...v1.3.0) (2023-09-26)
+
+
+### Features
+
+* update add cmd ([62705b6](https://github.com/Dlouxgit/see/commit/62705b62aac3494434100688e5a1202f03a0a651))
+
 ## [1.2.2](https://github.com/Dlouxgit/see/compare/v1.2.1...v1.2.2) (2023-06-27)
 
 

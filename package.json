@@ -1,6 +1,6 @@
 {
   "name": "see-seeker",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Quickly generate templates based on github repo or gitlab repo.",
   "main": "index.node",
   "scripts": {
